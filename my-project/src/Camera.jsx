@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FilesetResolver, HandLandmarker } from "@mediapipe/tasks-vision";
 import hand_landmarker_task from "../model/hand_landmarker.task";
-
+import { Strings } from "./assets/Strings";
 
 const Camera = () => {
     const videoRef = useRef(null);
@@ -15,8 +15,20 @@ const Camera = () => {
     const previousValueRef = useRef(null);
     const timerRef = useRef(null);
 
-    const exampleString = ["A",'F','C'];
+    const exampleString = Strings;
+    const [targetString, setTargetString] = useState(exampleString[0])
+    const [targetStringIndex, setTargetStringIndex] = useState(0)
 
+    useEffect(() => {
+        if(indexList >= targetString.length){
+            setTargetStringIndex(targetStringIndex + 1)
+            setTargetString(exampleString[targetStringIndex]);
+            setIndexList(0);
+            setPrevIndexList(-1);
+
+            setDisplayList([])
+        }
+    }, [indexList])
 
     //CHECKING IF HANDS EQAUL TO STRING
     useEffect(() => {
@@ -31,15 +43,13 @@ const Camera = () => {
     
           // Start a new timer
           timerRef.current = setTimeout(() => {
-            console.log(exampleString[indexList])
-            if(HandPrediction != "No Character" && HandPrediction == exampleString[indexList]){
+            console.log(targetString[indexList])
+            if(HandPrediction != "No Character" && HandPrediction == targetString[indexList]){
                 setDisplayList((prevList) => [...prevList, HandPrediction]);
                 setPrevIndexList(prevIndexList === -1 ? 0 : indexList)
                 setIndexList(indexList + 1)
             }
-            }, 2000);
-            
-            
+            }, 1000);
         }
         return () => {
           if (timerRef.current) {
@@ -213,7 +223,7 @@ const Camera = () => {
             </div>
         </div>
         <div>
-        {exampleString.map((char, index) => (
+        {targetString.map((char, index) => (
           <span
             key={index}
             style={{
