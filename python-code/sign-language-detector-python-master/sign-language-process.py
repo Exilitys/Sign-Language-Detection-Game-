@@ -10,8 +10,6 @@ import pickle
 model_dict = pickle.load(open('./python-code/model.p', 'rb'))
 model = model_dict['model']
 
-
-
 app = Flask(__name__)
 CORS(app)
 
