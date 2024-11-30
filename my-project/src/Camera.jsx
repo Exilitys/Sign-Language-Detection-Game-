@@ -7,7 +7,7 @@ const Camera = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [handPresence, setHandPresence] = useState(null);
-  const [HandPrediction, setHandPrediction] = useState("x");
+  const [HandPrediction, setHandPrediction] = useState("No Character");
 
   const [displayList, setDisplayList] = useState([]);
   const [indexList, setIndexList] = useState(0);

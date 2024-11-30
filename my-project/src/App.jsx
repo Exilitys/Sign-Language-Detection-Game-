@@ -1,17 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import Camera from "./camera";
+import Home from "./Home";
 
-
-const Demo = () => {
-    return (
+const App = () => {
+  return (
     <>
-    <div className="w-full h-[100vh] flex  justify-center items-center">
-        <div className = "bg-blue-50 p-10">
-            <Camera />
-        </div>
-    </div>
+      <Home />
     </>
-    );
+  );
 };
 
-export default Demo;
+export default App;
