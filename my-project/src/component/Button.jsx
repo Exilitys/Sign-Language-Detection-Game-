@@ -1,12 +1,14 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Button = ({ backgroundStyle, content, link }) => {
   return (
-    <a
-      className={`bg-red-50 px-10 py-5 hover:opacity-50 cursor-pointer rounded-xl ${backgroundStyle}`}
+    <NavLink
+      to={link}
+      className={` px-10 py-5 hover:opacity-50 cursor-pointer rounded-xl ${backgroundStyle}`}
     >
       {content}
-    </a>
+    </NavLink>
   );
 };
 

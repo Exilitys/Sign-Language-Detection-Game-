@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FilesetResolver, HandLandmarker } from "@mediapipe/tasks-vision";
 import hand_landmarker_task from "../model/hand_landmarker.task";
 import { Strings } from "./assets/Strings";
+import Navigation from "./component/Navigation";
 
 const Camera = () => {
   const videoRef = useRef(null);
@@ -208,6 +209,7 @@ const Camera = () => {
 
   return (
     <>
+      <Navigation />
       <div className='w-auto h-auto flex justify-center flex-row items-center'>
         <div className='flex-col items-center  mx-5 p-5 w-[250px] justify-evenly text-center'>
           <p className='my-5'>Spell the word</p>
