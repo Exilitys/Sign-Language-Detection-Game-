@@ -207,13 +207,13 @@ const Camera = () => {
   }, []);
 
   return (
-    <div className=" min-h-screen w-screen dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex flex-col items-center  ">
-      <Navigation classNames="py-10" />
-      <p className="font-bold text-3xl text-center mt-10 mb-10">Play Game</p>
-      <div className="w-fit h-auto flex justify-center flex-row items-center  border-2  relative bg-white">
-        <div className="flex-col items-center  mx-5 p-5 w-[250px] justify-evenly text-center">
-          <p className="my-5">Spell the word</p>
-          <div className="my-5  text-xl font-bold">
+    <div className=' min-h-screen w-screen dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex flex-col items-center  '>
+      <Navigation classNames='py-10' />
+      <p className='font-bold text-5xl text-center mt-10 mb-10'>Play Game</p>
+      <div className='w-fit h-auto flex justify-center flex-row items-center  border-2 border-black relative bg-white'>
+        <div className='flex-col items-center  mx-5 p-5 w-[250px] justify-evenly text-center'>
+          <p className='my-5'>Spell the word</p>
+          <div className='my-5  text-xl font-bold'>
             {targetString.map((char, index) => (
               <span
                 className={`${
@@ -225,15 +225,15 @@ const Camera = () => {
               </span>
             ))}
           </div>
-          <p className="my-5">Points : {Points} </p>
+          <p className='my-5'>Points : {Points} </p>
         </div>
-        <div className="flex-col justify-center items-center mt-14 mr-10">
-          <div className="relative w-fit h-fit flex items-center justify-center">
+        <div className='flex-col justify-center items-center mt-14 mr-10'>
+          <div className='relative w-fit h-fit flex items-center justify-center'>
             <video
               ref={videoRef}
               autoPlay
               playsInline
-              className="w-[300px] rounded-lg items-center"
+              className='w-[300px] rounded-lg items-center'
             ></video>
             <canvas
               ref={canvasRef}
@@ -247,7 +247,7 @@ const Camera = () => {
               }}
             ></canvas>
           </div>
-          <div className="text-center my-5 font-bold text-2xl">
+          <div className='text-center my-5 font-bold text-2xl'>
             {HandPrediction}
           </div>
         </div>
