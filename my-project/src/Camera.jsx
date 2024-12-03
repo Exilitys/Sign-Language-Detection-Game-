@@ -22,13 +22,18 @@ const Camera = () => {
   const [Points, setPoints] = useState(0);
 
   useEffect(() => {
-    if (indexList >= targetString.length) {
+    if (
+      indexList >= targetString.length &&
+      targetStringIndex < exampleString.length
+    ) {
       setTargetStringIndex((i) => i + 1);
       setIndexList(0);
       setPrevIndexList(-1);
       setPoints((p) => p + 100);
       setDisplayList([]);
       console.log(targetStringIndex);
+    } else {
+      setTargetStringIndex(0);
     }
   }, [indexList]);
 
@@ -208,17 +213,18 @@ const Camera = () => {
   }, []);
 
   return (
-    <>
-      <Navigation />
-      <div className='w-auto h-auto flex justify-center flex-row items-center'>
+    <div className=' min-h-screen w-screen dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex flex-col items-center  '>
+      <Navigation classNames='py-10' />
+      <p className='font-bold text-3xl text-center mt-10 mb-10'>Play Game</p>
+      <div className='w-fit h-auto flex justify-center flex-row items-center  border-2  relative bg-white'>
         <div className='flex-col items-center  mx-5 p-5 w-[250px] justify-evenly text-center'>
           <p className='my-5'>Spell the word</p>
-          <div className='my-5  text-3xl font-bold'>
+          <div className='my-5  text-xl font-bold'>
             {targetString.map((char, index) => (
               <span
                 className={`${
                   index <= prevIndexList ? "text-red-500" : "text-black"
-                } px-5 text-5xl `}
+                } px-2 text-4xl `}
                 key={index}
               >
                 {char}
@@ -227,9 +233,9 @@ const Camera = () => {
           </div>
           <p className='my-5'>Points : {Points} </p>
         </div>
-        <div className='flex-col justify-center items-center mt-14'>
+        <div className='flex-col justify-center items-center mt-14 mr-10'>
           <div className='relative w-[300px] h-[150px] bg-red-50'>
-            <video
+            {/* <video
               ref={videoRef}
               autoPlay
               playsInline
@@ -245,19 +251,14 @@ const Camera = () => {
                 width: "100%",
                 height: "auto",
               }}
-            ></canvas>
+            ></canvas> */}
           </div>
           <div className='text-center my-5 font-bold text-2xl'>
             {HandPrediction}
           </div>
         </div>
       </div>
-      <ul>
-        {displayList.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </>
+    </div>
   );
 };
 
