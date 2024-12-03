@@ -207,7 +207,7 @@ const Camera = () => {
   }, []);
 
   return (
-    <div className=" min-h-screen w-screen  bg-white   bg-dot-black/[0.2] relative flex flex-col items-center  ">
+    <div className=" min-h-screen w-screen dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex flex-col items-center  ">
       <Navigation classNames="py-10" />
       <p className="font-bold text-3xl text-center mt-10 mb-10">Play Game</p>
       <div className="w-fit h-auto flex justify-center flex-row items-center  border-2  relative bg-white">
