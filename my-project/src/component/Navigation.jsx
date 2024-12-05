@@ -6,10 +6,10 @@ const Navigation = ({ classNames }) => {
     <div
       className={`flex flex-row gap-4 mx-10 text-xl justify-start items-start ${classNames}`}
     >
-      <div className="font-bold text-2xl w-[40vw]">VISPA</div>
-      <div className="w-[50vw] flex-row flex justify-end">
+      <div className='font-bold text-2xl w-[40vw]'>VISPA</div>
+      <div className='w-[50vw] flex-row flex justify-end'>
         <NavLink
-          to="/"
+          to='/'
           className={({ isActive }) =>
             isActive
               ? "font-bold px-10 hover:opacity-50 cursor-pointer"
@@ -19,7 +19,7 @@ const Navigation = ({ classNames }) => {
           Home
         </NavLink>
         <NavLink
-          to="/Camera"
+          to='/Camera'
           className={({ isActive }) =>
             isActive
               ? "font-bold px-10 hover:opacity-50 cursor-pointer"
@@ -29,17 +29,18 @@ const Navigation = ({ classNames }) => {
           Play
         </NavLink>
         <NavLink
-          to="/Profile"
+          to='/Learn'
           className={({ isActive }) =>
             isActive
               ? "font-bold px-10 hover:opacity-50 cursor-pointer"
               : "px-10 hover:opacity-50 cursor-pointer"
           }
         >
-          Profile
+          Learn
         </NavLink>
+
         <NavLink
-          to="/AboutUs"
+          to='/AboutUs'
           className={({ isActive }) =>
             isActive
               ? "font-bold px-10 hover:opacity-50 cursor-pointer"
@@ -47,6 +48,16 @@ const Navigation = ({ classNames }) => {
           }
         >
           About Us
+        </NavLink>
+        <NavLink
+          to='/Profile'
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold px-10 hover:opacity-50 cursor-pointer"
+              : "px-10 hover:opacity-50 cursor-pointer"
+          }
+        >
+          Profile
         </NavLink>
       </div>
     </div>

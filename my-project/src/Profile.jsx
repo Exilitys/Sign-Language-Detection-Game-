@@ -79,7 +79,7 @@ const Profile = () => {
   return (
     <div className=' min-h-screen w-full bg-white   bg-dot-black/[0.2] relative flex flex-col items-center '>
       <Navigation classNames='mt-10' />
-      <div className='text-5xl font-bold my-10'>Achievements</div>
+      <div className='text-5xl font-bold my-10 mt-20'>Achievements</div>
       <BentoGrid className=''>
         {items.map((item, i) => (
           <BentoGridItem
@@ -91,8 +91,12 @@ const Profile = () => {
           />
         ))}
       </BentoGrid>
+
+      <div className='text-xl font-bold my-10 hover:opacity-50 cursor-pointer'>
+        View All -{">"}
+      </div>
       <div className='text-5xl font-bold my-10'>Statistics</div>
-      <BentoGrid className={"grid md:auto-rows-[8rem]"}>
+      <BentoGrid className={"grid md:auto-rows-[8rem] mb-20"}>
         {items2.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -108,7 +112,7 @@ const Profile = () => {
         ))}
       </BentoGrid>
 
-      <CardContainer className='inter-var'>
+      {/* <CardContainer className='inter-var'>
         <CardBody className='bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  '>
           <CardItem
             translateZ='50'
@@ -150,7 +154,7 @@ const Profile = () => {
             </CardItem>
           </div>
         </CardBody>
-      </CardContainer>
+      </CardContainer> */}
     </div>
   );
 };
